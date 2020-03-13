@@ -12,7 +12,7 @@ var app = (function () {
     var addPointToCanvas = function (evt) {
         var point=getMousePosition(evt);
         var id=document.getElementById("idplano").value;
-        stompClient.send("/topic/newpoint."+id, {}, JSON.stringify(point));
+        stompClient.send("/app/newpoint."+id, {}, JSON.stringify(point));
     };
     
     
@@ -47,7 +47,7 @@ var app = (function () {
     };
 
 
-    
+
     return {
 
         init: function () {
